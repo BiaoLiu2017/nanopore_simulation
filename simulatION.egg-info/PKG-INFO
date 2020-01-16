@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: simulatION
+Version: 0.3
+Summary: Simulates Oxford Nanopore Technologies MinION reads
+Home-page: https://git.rohreich.de/projects/DNA/repos/nanopore_simulation/
+Author: FH Kiel
+Author-email: christian.rohrandt@fh-kiel.de
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

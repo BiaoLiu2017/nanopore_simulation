@@ -1,0 +1,7 @@
+BioPython
+pandas
+h5py
+scipy
+matplotlib
+argparse
+numpy
