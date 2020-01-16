@@ -12,22 +12,16 @@ Nanopore SimulatION is a tool for simulating an Oxford Nanopore Technologies Min
 
 ### Installation
 
-For Debian-based distros (Debian, Ubuntu, Linux Mint) install:
+Install the Nanopore SimulatION package:
 ```bash
-sudo apt-get install python3-tk
+conda create -n Simulator python=3
+conda activate Simulator
 ```
 
-For CentOS, Redhat Linux install:
 ```bash
-sudo yum install python3-tkinter
-```
-
-After that, install the Nanopore SimulatION package:
-
-```bash
-git clone https://github.com/crohrandt/nanopore_simulation
-cd nanopore_simulation
-pip3 install -e ./
+git clone ssh://git@192.168.224.185:7999/~liubiao2/simulator.git
+cd simulator
+pip install -e ./
 ```
 
 ##### Dependencies
@@ -47,39 +41,10 @@ All dependencies should be automatically installed by pip.
 
 #### Examples
 
-In the examples directory several standard use cases will be predefined for quick usage. Each use 
-case is structured within an own subdirectory. To try out the examples the bash-script needs 
-to be run. Every file that is requireed is packaged or will be downloaded from a free and open 
-source download site.
-
-For the complete verification, a pipeline is described using the ONT albacore basecaller in version 2.1.1 and a mapping 
-of the simulated reads to the reference genome using minimap2 in version 2.1-r311. 
-
 #### DNA-Example
 
 ###### Simulate human DNA reads
 ```
-cd examples
-cd DNA
-./DNA_quick_example_run.sh
+cd examples/DNA
+./Simulator.sh
 ```
-or
-```
-./DNA_full_example_run.sh
-```
-###### Basecall simulated Fast5s with albacore 2.1.1
-```
-cd Run-Output
-read_fast5_basecaller.py -i . -o fast5,fastq -s basecalled -f FLO-MIN106 -k SQK-LSK108 -t 4 -r
-```
-
-###### Map basecalled reads with minimap 2.1
-
-```
-minimap2 -ax map-ont ../../Homo_sapiens.GRCh38.dna.primary_assembly.fa basecalled/workspace/pass/*.fastq > Run-Output.sam
-```
-
-###### Tested with
-
-- ONT albacore 2.1.1
-- minimap2 2.11-r311
